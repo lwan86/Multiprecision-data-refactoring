@@ -35,10 +35,6 @@ int main(int argc, char ** argv){
     string filename = string(argv[argv_id ++]);
     int target_level = atoi(argv[argv_id ++]);
     int num_bitplanes = atoi(argv[argv_id ++]);
-    if(num_bitplanes % 2 == 1) {
-        num_bitplanes += 1;
-        std::cout << "Change to " << num_bitplanes + 1 << " bitplanes for simplicity of negabinary encoding" << std::endl;
-    }
     int num_dims = atoi(argv[argv_id ++]);
     vector<uint32_t> dims(num_dims, 0);
     for(int i=0; i<num_dims; i++){
@@ -53,10 +49,6 @@ int main(int argc, char ** argv){
     }
     using T = float;
     using T_stream = uint32_t;
-    if(num_bitplanes > 32){
-        num_bitplanes = 32;
-        std::cout << "Only less than 32 bitplanes are supported for single-precision floating point" << std::endl;
-    }
     auto decomposer = MDR::MGARDOrthoganalDecomposer<T>();
     // auto decomposer = MDR::MGARDHierarchicalDecomposer<T>();
     auto interleaver = MDR::DirectInterleaver<T>();

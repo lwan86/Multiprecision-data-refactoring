@@ -18,10 +18,10 @@ namespace MDR {
                     c = 1.0 + sqrt(3)/2;
                     break;
                 case 2:
-                    c = 1.0 + 9.0/4;
+                    c = 1.0 + 3.0/2;
                     break;
                 case 3:
-                    c = 1.0 + 21.0*sqrt(3)/8;
+                    c = 1.0 + 3.0*sqrt(3)/4;
                     break;
                 default:
                     std::cerr << num_dims << "-Dimentional error estimation not implemented." << std::endl;
